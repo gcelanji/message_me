@@ -5,7 +5,12 @@ import "jquery"
 import "jquery_ujs"
 import "semantic-ui"
 
+$(document).on('turbo:load', function(){
+  $('.ui.dropdown').dropdown();
+})
 
-$('.ui.dropdown')
-  .dropdown()
-;
+
+// older rails version
+// $(document).on('turbolinks:load', function(){
+//   $('.ui.dropdown').dropdown();
+// })
