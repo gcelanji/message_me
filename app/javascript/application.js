@@ -5,7 +5,13 @@ import "jquery"
 import "jquery_ujs"
 import "semantic-ui"
 import "channels"
-import scroll_bottom from "./scroll_bottom"
+
+let scroll_bottom = function() {
+  if ($('#messages').length > 0) {
+    $('#messages').scrollTop($('#messages')[0].scrollHeight);
+  }
+}
+
 
 let submit_message = function(){
   $("#message_body").on('keypress',function(e) {

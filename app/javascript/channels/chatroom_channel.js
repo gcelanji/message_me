@@ -1,7 +1,10 @@
 import consumer from "channels/consumer"
-import scroll_bottom from "../scroll_bottom"
 
-
+let scroll_bottom = function() {
+  if ($('#messages').length > 0) {
+    $('#messages').scrollTop($('#messages')[0].scrollHeight);
+  }
+}
 
 consumer.subscriptions.create("ChatroomChannel", {
   connected() {

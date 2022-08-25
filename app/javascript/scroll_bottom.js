@@ -1,7 +1,0 @@
-let scroll_bottom = function() {
-  if ($('#messages').length > 0) {
-    $('#messages').scrollTop($('#messages')[0].scrollHeight);
-  }
-}
-
-export default scroll_bottom
