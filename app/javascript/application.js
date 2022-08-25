@@ -4,6 +4,17 @@ import "controllers"
 import "jquery"
 import "jquery_ujs"
 import "semantic-ui"
+import "channels"
+import scroll_bottom from "./scroll_bottom"
+
+let submit_message = function(){
+  $("#message_body").on('keypress',function(e) {
+    if(e.key == "Enter") {
+      $('button').trigger("click");
+      e.target.value = "";
+    }
+});
+}
 
 $(document).on('turbo:load', function(){
   $('.ui.dropdown').dropdown();
@@ -15,6 +26,8 @@ $(document).on('turbo:load', function(){
       .transition('fade')
     ;
   });
+  scroll_bottom();
+  submit_message();
 })
 
 
@@ -22,4 +35,4 @@ $(document).on('turbo:load', function(){
 // $(document).on('turbolinks:load', function(){
 //   $('.ui.dropdown').dropdown();
 // })
-import "channels"
+
